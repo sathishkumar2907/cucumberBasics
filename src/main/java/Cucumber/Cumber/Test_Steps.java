@@ -19,18 +19,7 @@ import cucumber.api.java.en.When;
 import gherkin.lexer.Th;
 
 public class Test_Steps{
-	 
-	/*WebDriver driver;
-	
-	@Before
-	public void login(){
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SatishTvisha\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		
-	}*/
-	
+
 	@Given("^User is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
 		BasePage.login();
