@@ -15,8 +15,14 @@ Feature: Login Action
 	Given User is on Home Page
 	When User Navigate to LogIn Page
 	And User enters Credentials to LogIn
-    | Username   | Password |
-    | admin@trueconnect.com | 123456 |
-    | testuser_2 | Test@154 |
+    | Username   | Password |          RunMode|
+    | admin@trueconnect.com | 111111 |Yes|
+    #| admin@trueconnect.com | 111111 |Yes| 
   Then Message displayed Login Successfully
-  
+ 
+ 
+Scenario: Successfully get table count
+	 Then User is on userlist page
+   Then get all row count
+	 Then page count
+	
