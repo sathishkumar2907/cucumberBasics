@@ -43,17 +43,15 @@ public void user_enters_testuser_and_Test(DataTable usercredentials) throws Thro
 		for (Map<String, String> data : usercredentials.asMaps(String.class, String.class)) {
 			System.out.println("data==> "+data);
 			System.out.println("RunMode===> "+data.get("RunMode"));
+			
 			if(data.get("RunMode").equals("Yes")){
 		
-				//Thread.sleep(500);
 				username.clear();
 				username.sendKeys(data.get("Username"));
 				
-				//Thread.sleep(500);
 				password.clear();
 				password.sendKeys(data.get("Password"));
 				
-				//Thread.sleep(500);
 				loginbtn.click();
 				
 				String test=loginerrorMsg.getText();
@@ -62,20 +60,21 @@ public void user_enters_testuser_and_Test(DataTable usercredentials) throws Thro
 				}else{
 					System.out.println("Valid Credentials");
 				}
-					//Thread.sleep(500);
+			
 				logoutbtn();
 			}
 		  }
         }
 
    public void logoutbtn() throws InterruptedException{
-	   
 	  
 	  /* System.out.println("dropdoen");
 		loginOutdrpdown.click();
 	    Thread.sleep(500);
 	    loginOutbtn.click();
-*/   }
+      */  
+	   
+   }
    
    
    

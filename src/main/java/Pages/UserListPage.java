@@ -24,12 +24,16 @@ public class UserListPage {
 	@FindAll(@FindBy(xpath="//*[@id='suggestionsTable_paginate']/span/a"))
 	public static List<WebElement> pagenationId;
 	
-	@FindBy(xpath="//*[@id='suggestionsTable_paginate']/span/a")
-     public static WebElement pagenationIdPrev;
+	@FindBy(xpath = "//a[contains(@class,'paginate_button ')]")
 	
-	@FindBy(id="suggestionsTable_next")
-    public static List<WebElement> pagenationIdNext;
+	static List<WebElement> pageCount;
 	
+	@FindBy(xpath = "//tbody[@id='table_body']/tr[@role='row']")
+	static List<WebElement> pageRecords;
+	
+	@FindBy(xpath = "//a[contains(@class,'paginate_button next')]")
+	static WebElement nextButton;
+
 	@FindAll(@FindBy(xpath="//*[@id='table_body']/tr"))
 	public static List<WebElement> tableTr;
 	
@@ -39,7 +43,12 @@ public class UserListPage {
 	@FindAll(@FindBy(xpath="//*[@id='table_body']/tr/td[2]"))
 	public static List<WebElement> tableTd1Name;
 	
+	@FindAll(@FindBy(tagName="a"))
+	public static List<WebElement> ele;
+	
         public static void tableData() throws InterruptedException{
+        	
+        	System.out.println("pagecount===>"+pageCount.size());
         	
         	int tablerows=tableTr.size();
         	System.out.println("tablerows===>"+tablerows);
@@ -47,19 +56,20 @@ public class UserListPage {
         	int tablecoloumns=tableTd.size();
         	System.out.println("tablecoloumns===>"+tablecoloumns);
         	
-        	 for(WebElement E : tableTd1Name)
-             {
+        	for(WebElement E : tableTd1Name) {
                  System.out.println(E.getText());
-             }
+            }
         	
-        	   for(int l=0;l<pagenationId.size();l++){
-           		   System.out.println(pagenationId.size());
-           		   Thread.sleep(1000);
-           		   if(pagenationIdPrev.isEnabled()){
-           		        pagenationId.get(l).click();
-           		   }
-           		int k=l+1;
-           		   System.out.println("No. of Rows per page===>"+tableTr.size()+" page number==>"+ k);
-           	}
-         }
+        	int a = pageCount.size() - 2;
+        	System.out.println("page count................................"+a);
+        	
+        	int count = Integer.parseInt(pageCount.get(a).getText());
+        	System.out.println("count===>"+count);
+        	
+        	for (int i = 1; i <= count; i++) {
+                System.out.println("Page " + i + "contains " + pageRecords.size() + " rows");
+        	    nextButton.click();
+        	     
+           }
+       	}
      }
