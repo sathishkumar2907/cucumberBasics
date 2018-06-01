@@ -10,7 +10,7 @@ public class BasePage {
 	public static WebDriver driver;
 
 	public static void login(){
-		System.setProperty("webdriver.chrome.driver", "/home/rakesh/Documents/eclipseworkspace/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "D:\\Springworkspace\\Cumber\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
