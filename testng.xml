@@ -3,8 +3,7 @@
 <suite name="Suite">
   <test name="Test">
   <classes>
-  <class name="Cucumber.Cumber.Test_Steps"></class>
-  <class name="Cucumber.Cumber.UserlistTest"></class>
+      <class name="stepDefinition.TestRunner"></class>
   </classes>
   
   </test> <!-- Test -->
