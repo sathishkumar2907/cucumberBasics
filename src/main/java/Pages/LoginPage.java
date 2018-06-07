@@ -15,7 +15,7 @@ public class LoginPage{
 WebDriver driver;
 	
 	public LoginPage(WebDriver driver){
-		PageFactory.initElements(BasePage.driver, this);
+		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(id="dXNlcm5hbWU")

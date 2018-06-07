@@ -5,7 +5,7 @@ Feature: Login Action
 	When User Navigate to LogIn Page
 	And User enters Credentials to LogIn
     | Username   | Password |          RunMode|
-    | admin@trueconnect.com | 111111 |Yes|
+    | admin@trueconnect.com | 123456 |Yes|
     #| admin@trueconnect.com | 111111 |Yes| 
   Then Message displayed Login Successfully
  

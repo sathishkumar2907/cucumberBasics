@@ -9,12 +9,14 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Cucumber.Cumber.BasePage;
+
 public class UserListPage {
 
-    static WebDriver driver;
-	
-	public UserListPage(WebDriver driver){
-		PageFactory.initElements(driver, this);
+    WebDriver driver;
+  
+    public UserListPage(WebDriver driver){
+    	PageFactory.initElements(driver, this);
 	}
 	
 	
@@ -22,31 +24,31 @@ public class UserListPage {
 	public WebElement tableId;
 	
 	@FindAll(@FindBy(xpath="//*[@id='suggestionsTable_paginate']/span/a"))
-	public static List<WebElement> pagenationId;
+	public List<WebElement> pagenationId;
 	
-	@FindBy(xpath = "//a[contains(@class,'paginate_button ')]")
+	@FindAll(@FindBy(xpath = "//a[contains(@class,'paginate_button')]"))
+	 public List<WebElement> pageCount;
 	
-	static List<WebElement> pageCount;
-	
-	@FindBy(xpath = "//tbody[@id='table_body']/tr[@role='row']")
-	static List<WebElement> pageRecords;
+	 @FindBy(xpath = "//tbody[@id='table_body']/tr[@role='row']")
+	 public List<WebElement> pageRecords;
 	
 	@FindBy(xpath = "//a[contains(@class,'paginate_button next')]")
-	static WebElement nextButton;
+	public WebElement nextButton;
 
 	@FindAll(@FindBy(xpath="//*[@id='table_body']/tr"))
-	public static List<WebElement> tableTr;
+	public List<WebElement> tableTr;
 	
 	@FindAll(@FindBy(xpath="//*[@id='table_body']/tr[1]/td"))
-	public static List<WebElement> tableTd;
+	public List<WebElement> tableTd;
 	
 	@FindAll(@FindBy(xpath="//*[@id='table_body']/tr/td[2]"))
-	public static List<WebElement> tableTd1Name;
+	public List<WebElement> tableTd1Name;
 	
 	@FindAll(@FindBy(tagName="a"))
-	public static List<WebElement> ele;
+	public List<WebElement> ele;
 	
-        public static void tableData() throws InterruptedException{
+          public void tableData() throws InterruptedException{
+        	
         	
         	System.out.println("pagecount===>"+pageCount.size());
         	
