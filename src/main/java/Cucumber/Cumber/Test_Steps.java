@@ -38,17 +38,19 @@ public class Test_Steps{
 		//BasePage.driver.get("http://192.168.2.60/true_connect_web/public/");	
 	}
 
-	@When("^User Navigate to LogIn Page$")
-	public void user_Navigate_to_LogIn_Page() throws Throwable { 		
-       System.out.println("navigated");
-       Reporter.addStepLog("navigated to Login page");
-	}
+	 
 	
 	@And("^User enters Credentials to LogIn$")
 	public void user_enters_testuser_and_Test(DataTable usercredentials) throws Throwable {
  
-		LoginPage loginPage=new LoginPage(driver);
-		loginPage.user_enters_testuser_and_Test(usercredentials);
+		try{
+			
+		     LoginPage loginPage=new LoginPage(driver);
+		     loginPage.user_enters_testuser_and_Test(usercredentials);
+		
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		
 	}
 
